@@ -44,4 +44,24 @@
     <property name="numVolatileTests" category="output" label="# Volatile Tests" />
     <property name="testResults" category="output" />
   </type>
+  
+  <type type="dynatrace.StartRecording" extends="dynatrace.Task">
+    <property name="profile" category="input" />
+    <property name="presentableName" required="false" category="input" />
+    <property name="description" required="false" size="large" category="input" />
+  </type>
+
+  <type type="dynatrace.StopRecording" extends="dynatrace.Task">
+    <property name="profile" category="input" />
+    <property name="sessionName" category="output" />
+  </type>
+  
+  <type type="dynatrace.RegisterDeployment" extends="dynatrace.Task">
+    <property name="profile" category="input" />
+    <property name="message" required="true" category="input" />
+    <property name="description" required="false" category="input" />
+    <property name="severity" required="false" default="informational" category="input" />
+    <property name="start" required="false" category="input" />
+    <property name="end" required="false" category="input" />
+  </type>  
 </synthetic>
